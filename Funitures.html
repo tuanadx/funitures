@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Nội Thất Hòa Phát</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+ .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s;
+    z-index: 1000; /* Ensure it's always on top */
+}
+
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100px;
+        }
+
+        .search-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.search-bar input {
+    width: 400px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    margin-right: 5px; /* Thêm khoảng cách giữa input và button */
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #b71c1c;
+}
+
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .nav a:hover {
+            color: #b71c1c;
+        }
+
+        /* Banner */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-image: url('https://wallpaperaccess.com/full/1347435.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            color: #fff;
+            text-align: left;
+        }
+
+        .banner-text h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .banner-text h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .banner-text a {
+            padding: 10px 20px;
+            background-color: #b71c1c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Product Section */
+        .product-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .product-section h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .product-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-item h3 {
+            font-size: 18px;
+            margin: 15px 0 10px;
+        }
+
+        .product-item p {
+            color: #666;
+        }
+
+        .product-item a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #b71c1c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .footer-column a:hover {
+            color: #fff;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin-right: 15px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #b71c1c;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner-text h1 {
+                font-size: 36px;
+            }
+
+            .banner-text h2 {
+                font-size: 18px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+        /* Dropdown Styles */
+.nav-1 {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    list-style-type: none;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show dropdown on hover */
+.nav-1:hover .dropdown-content {
+    display: block;
+}
+
+/* Position adjustment for dropdown */
+.nav-1 .dropdown-content {
+    top: 100%;
+    left: 0;
+    padding-top: 10px;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-container">
+            <div class="logo">
+               <a href="Funitures.html"> <img src="https://cuahangnoithathoaphat.com/wp-content/uploads/2024/04/logo-200px-1-medium.png" alt="Logo"  ></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav">
+                <a href="#">Trang Chủ</a>
+                <div class="nav-1 dropdown">
+                    <a href="#">Giới Thiệu</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Lịch Sử</a></li>
+                        <li><a href="#">Tầm Nhìn</a></li>
+                        <li><a href="#">Sứ Mệnh</a></li>
+                    </ul>
+                </div>
+                <div class="nav-1 dropdown">
+                    <a href="#">Sản Phẩm</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Ghế Văn Phòng</a></li>
+                        <li><a href="#">Bàn Làm Việc</a></li>
+                        <li><a href="#">Tủ Hồ Sơ</a></li>
+                    </ul>
+                </div>
+                <a href="#">Tin Tức</a>
+                <a href="#">Liên Hệ</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Bừng Sáng Không Gian</h1>
+            <h2>Dẫn Đầu Cùng Bạn</h2>
+            <a href="#">Khám Phá Sản Phẩm</a>
+        </div>
+    </div>
+
+    <!-- Product Section -->
+    <div class="product-section">
+        <h2>Sản Phẩm Nổi Bật</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="https://cuahangnoithathoaphat.com/wp-content/uploads/2022/09/SG912-0-768x555.jpg" alt="Ghế Văn Phòng">
+                <h3>Ghế Văn Phòng</h3>
+                <p>Ghế văn phòng cao cấp, thiết kế hiện đại, thoải mái.</p>
+                <a href="#">Xem Chi Tiết</a>
+            </div>
+            <div class="product-item">
+                <img src="https://cuahangnoithathoaphat.com/wp-content/uploads/2022/09/luxb2018v3-768x555.jpg" alt="Bàn Làm Việc">
+                <h3>Bàn Làm Việc</h3>
+                <p>Bàn làm việc sang trọng, chất lượng vượt trội.</p>
+                <a href="#">Xem Chi Tiết</a>
+            </div>
+            <div class="product-item">
+                <img src="https://cuahangnoithathoaphat.com/wp-content/uploads/2022/10/tg06-3-768x555.jpg" alt="Tủ Hồ Sơ">
+                <h3>Tủ Hồ Sơ</h3>
+                <p>Tủ hồ sơ tiện ích, bền bỉ và an toàn.</p>
+                <a href="#">Xem Chi Tiết</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Liên Hệ</h4>
+                <p>Số điện thoại: 0865995381</p>
+                <p>Email: info@noithathoaphat.com</p>
+            </div>
+            <div class="footer-column">
+                <h4>Về Chúng Tôi</h4>
+                <a href="#">Giới Thiệu</a>
+                <a href="#">Sản Phẩm</a>
+                <a href="#">Tin Tức</a>
+            </div>
+            <div class="footer-column">
+                <h4>Theo Dõi Chúng Tôi</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    let lastScrollTop = 0;
+    const header = document.querySelector('.header');
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            // User is scrolling down, hide the navbar
+            header.style.top = '-100px';
+        } else {
+            // User is scrolling up, show the navbar
+            header.style.top = '0';
+        }
+        lastScrollTop = scrollTop;
+    });
+</script>
+
+</html>
